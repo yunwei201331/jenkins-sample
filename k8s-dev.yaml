@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: jenkins-demo
-  namespace: devlopment
+  namespace: development
 spec:
   template:
     metadata:
@@ -10,7 +10,7 @@ spec:
         app: jenkins-demo
     spec:
       containers:
-      - image: xianchao/jenkins-demo:<BUILD_TAG>
+      - image: 192.168.2.228/project/jenkins-demo:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         name: jenkins-demo
         env:
@@ -21,7 +21,7 @@ apiVersion: v1
 kind: Service
 metadata:
    name: demo
-   namespace: devlopment
+   namespace: development
 spec:
    selector:
      app: jenkins-demo
